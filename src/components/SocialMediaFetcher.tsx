@@ -27,7 +27,7 @@ const SocialMediaFetcher: React.FC = () => {
     setError(null);
 
     try {
-      let baseUrl = `http://127.0.0.1:8000/api/social_media/${platform}`;
+      let baseUrl = `http://18.205.158.112:8000/api/social_media/${platform}`;
       const params = new URLSearchParams();
 
       if (platform === 'instagram' && instagramUrl.trim()) {

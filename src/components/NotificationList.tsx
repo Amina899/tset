@@ -16,7 +16,7 @@ const NotificationsList: React.FC = () => {
 
   const fetchNotifications = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/settings/notifications", {
+      const response = await fetch("http://18.205.158.112:8000/api/settings/notifications", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
         },
@@ -33,7 +33,7 @@ const NotificationsList: React.FC = () => {
 
   const markAsRead = async (id: string) => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/settings/notifications/mark-read", {
+      const response = await fetch("http://18.205.158.112:8000/api/settings/notifications/mark-read", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

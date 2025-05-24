@@ -65,7 +65,7 @@ const Analytics: React.FC = () => {
       setLoading(true);
       try {
         const res = await fetch(
-          `http://127.0.0.1:8000/api/analytics/summary?time_range=${timeRange}`
+          `http://18.205.158.112:8000/api/analytics/summary?time_range=${timeRange}`
         );
         const json = await res.json();
         setData(json);

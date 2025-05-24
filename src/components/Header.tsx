@@ -13,7 +13,7 @@ interface Notification {
 
 // Fetch all notifications (not just count)
 const fetchNotifications = async () => {
-  const response = await fetch('http://127.0.0.1:8000/api/settings/notifications', {
+  const response = await fetch('http://18.205.158.112:8000/api/settings/notifications', {
     method: 'GET',
     headers: { 
       'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
 
   const markAsRead = async (id: string) => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/settings/notifications/mark-read', {
+      const response = await fetch('http://18.205.158.112:8000/api/settings/notifications/mark-read', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

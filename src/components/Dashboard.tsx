@@ -87,7 +87,7 @@ const Dashboard: React.FC = () => {
       const params = new URLSearchParams();
       params.append('time_range', filters.timeRange);
 
-      const response = await fetch(`http://127.0.0.1:8000/api/dashboard/info?${params.toString()}`, {
+      const response = await fetch(`http://18.205.158.112:8000/api/dashboard/info?${params.toString()}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token') || ''}`,
         },
@@ -157,7 +157,7 @@ const handleSendHelp = async (postId: string) => {
     return;
     }
   try {
-    const response = await fetch(`http://127.0.0.1:8000/api/content_review/${postId}/help_sent`, {
+    const response = await fetch(`http://18.205.158.112:8000/api/content_review/${postId}/help_sent`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token') || ''}`,

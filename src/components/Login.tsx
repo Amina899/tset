@@ -18,7 +18,7 @@ const handleLogin = async (e: React.FormEvent) => {
 
   try {
     const response = await axios.post<{ access_token: string }>(
-      'http://127.0.0.1:8000/api/auth/login',
+      'http://18.205.158.112:8000/api/auth/login',
       { email, password },
       {
         headers: {

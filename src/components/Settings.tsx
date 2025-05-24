@@ -3,7 +3,7 @@ import { Bell, Lock, Database } from 'lucide-react';
 
 // Fetch user settings
 const fetchSettings = async () => {
-  const response = await fetch('http://127.0.0.1:8000/api/settings', {
+  const response = await fetch('http://18.205.158.112:8000/api/settings', {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token') || ''}`,
     },
@@ -18,7 +18,7 @@ const updateNotificationPreferences = async (preferences: {
   high_risk_alert_notification_allowed: boolean;
   user_response_alert_notification_allowed: boolean;
 }) => {
-  const response = await fetch('http://127.0.0.1:8000/api/settings/notification/change-prefs', {
+  const response = await fetch('http://18.205.158.112:8000/api/settings/notification/change-prefs', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const updateNotificationPreferences = async (preferences: {
 
 // Change user password
 const changePassword = async (password: string) => {
-  const response = await fetch('http://127.0.0.1:8000/api/settings/security', {
+  const response = await fetch('http://18.205.158.112:8000/api/settings/security', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const changePassword = async (password: string) => {
 
 // Export data
 const exportData = async () => {
-  const response = await fetch('http://127.0.0.1:8000/api/settings/export-data', { method: 'POST' });
+  const response = await fetch('http://18.205.158.112:8000/api/settings/export-data', { method: 'POST' });
   if (response.ok) {
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);

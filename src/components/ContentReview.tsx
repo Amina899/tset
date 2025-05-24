@@ -37,7 +37,7 @@ const ContentReview: React.FC = () => {
         let url = '';
         if (debouncedQuery.trim().length > 0) {
           const encodedQuery = encodeURIComponent(debouncedQuery.trim());
-          url = `http://127.0.0.1:8000/api/content_review/search?q=${encodedQuery}`;
+          url = `http://18.205.158.112:8000/api/content_review/search?q=${encodedQuery}`;
         } else {
           const params = new URLSearchParams();
           if (filters.sources.length) {
@@ -47,7 +47,7 @@ const ContentReview: React.FC = () => {
             params.append('risk_levels', filters.riskLevels.join(','));
           }
           params.append('time_range', filters.timeRange);
-          url = `http://127.0.0.1:8000/api/content_review/info?${params.toString()}`;
+          url = `http://18.205.158.112:8000/api/content_review/info?${params.toString()}`;
         }
 
         const response = await fetch(url, {
@@ -88,7 +88,7 @@ const ContentReview: React.FC = () => {
         post._id === postId ? { ...post, invention_outcomes_status: 'sent' } : post
       ));
       const response = await fetch(
-        `http://127.0.0.1:8000/api/content_review/${postId}/help_sent`,
+        `http://18.205.158.112:8000/api/content_review/${postId}/help_sent`,
         {
           method: 'POST',
           headers: {

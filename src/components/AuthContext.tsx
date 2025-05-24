@@ -69,7 +69,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           signal: controller.signal,
         };
 
-        const res = await axios.get<User>('http://localhost:8000/api/auth/me', config);
+        const res = await axios.get<User>('http://18.205.158.112:8000/api/auth/me', config);
         setUser(res.data);
       } catch (err: unknown) {
         if (isAxiosError(err)) {
